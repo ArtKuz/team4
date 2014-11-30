@@ -1,0 +1,42 @@
+.tabs
+{
+    display: table;
+    overflow: hidden;
+    padding: 20px 24px;
+    width: 100%;
+    table-layout: fixed;
+    box-sizing: border-box;
+
+    &__tab
+    {
+        border-radius: 0;
+        display: table-cell;
+        text-align: center;
+
+        &_middle
+        {
+            border-right: none;
+        }
+
+            &_left
+        {
+            border-radius: 3px 0 0 3px;
+            border-right: none;
+        }
+
+            &_right
+        {
+            border-radius: 0 3px 3px 0;
+        }
+    }
+}
+
+.button-active
+{
+    border: $border-button;
+}
+
+.button-active + .tabs__tab
+{
+    border-left: none;
+}

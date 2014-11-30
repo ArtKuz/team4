@@ -1,0 +1,17 @@
+.forecast_hours
+{
+    margin: 0;
+}
+
+.forecast_hours__svg_bar rect
+{
+    shape-rendering: crispEdges;
+}
+
+.forecast_hours__svg_axis path,
+.forecast_hours__svg_axis line
+{
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}

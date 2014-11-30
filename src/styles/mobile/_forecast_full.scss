@@ -1,0 +1,61 @@
+.forecast_full
+{
+    &_today
+    {
+
+    }
+
+    &__day
+    {
+        font: 400 15px Arial, Helvetica, sans-serif;
+        margin: 0 0 35px;
+    }
+
+    &__weekday
+    {
+        font-size: 24px;
+        padding: 0 24px 10px;
+        text-transform: capitalize;
+
+        &-weekend
+        {
+            color: red;
+        }
+    }
+
+    &__weather
+    {
+
+        &-title
+        {
+            color: #000;
+            float: left;
+            font-size: 25px;
+            margin: 10px 50px 0 0;
+            opacity: 0.5;
+            text-transform: capitalize;
+            width: 90px;
+        }
+
+        &-box
+        {
+            display: table;
+            padding: 15px 24px;
+            width: 100%;
+            background-color: #fae5aa;
+        }
+
+        &-icon
+        {
+            float: left;
+            margin: 5px 25px 0 0;
+            height: 35px;
+        }
+
+        &-temp
+        {
+            font-size: 25px;
+            margin: 10px 0 0;
+        }
+    }
+}

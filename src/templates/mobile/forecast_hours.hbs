@@ -1,0 +1,13 @@
+<div class="current-weather_content">
+    <div class="current-weather__column__container">
+        <div class="current-weather__column__container_tempvalue">
+            <div class="current-weather__column__container_tempvalue_big">{{today.temp}}&deg;C</div>
+        </div>
+        <div class="clear"></div>
+        <div class="current-weather__column__container__icon">
+            <img class="current-weather__column__container__icon_image" src="{{weatherIcon today.weather_icon}}" alt="">
+            <div class="current-weather__column__container__icon_text">{{today.weather}}</div>
+        </div>
+    </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" class="forecast_hours__svg" width="100%"></svg>

@@ -7,5 +7,13 @@ module.exports = {
         tomorrow.setSeconds(0);
 
         return tomorrow;
+    },
+    getToday: function () {
+        var now = new Date();
+        now.setHours(0);
+        now.setMinutes(0);
+        now.setSeconds(0);
+
+        return now;
     }
 };

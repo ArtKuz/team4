@@ -7,14 +7,17 @@ var Router = Backbone.Router.extend({
     routes: {
         '': 'autoDetect',
         ':geoid': 'index',
-        ':geoid/:tab': 'index'
+        ':geoid/:tab': 'index',
+        ':mobile/:geoid/:tab': 'index'
     },
 
     initialize: function (options) {
         this.state = options.state;
         this.state.on('change', function (state) {
             var geoid = state.get('geoid'),
-                tab = state.get('tab');
+                tab = state.get('tab'),
+                mobile = state.get('mobile');
+
             if (geoid !== undefined && tab !== undefined) {
                 Backbone.history.navigate(
                     geoid + '/' + tab,
@@ -36,10 +39,15 @@ var Router = Backbone.Router.extend({
     },
 
     index: function (geoid, tab) {
-        this.state.set({
-            geoid: geoid,
-            tab: tab || 'short'
-        });
+        if (geoid === 'mobile.html') {
+            this.state.set('mobile', true);
+            this.autoDetect();
+        } else {
+            this.state.set({
+                geoid: geoid,
+                tab: tab || 'short'
+            });
+        }
     }
 });
 

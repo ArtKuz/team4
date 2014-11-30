@@ -2,7 +2,7 @@
     white-space: nowrap;
 
     .city_and_now_container{
-        min-width: 50%;
+        width: 50%;
         display: inline-block;
         height: 250px;
     }
@@ -116,7 +116,7 @@
 .current-weather_adv-wrapper{
     display: inline-block;
     vertical-align: top;
-    min-width: 49%;
+    min-width: 47%;
     text-align: right;
 
     .current-weather_adv_img{

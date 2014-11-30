@@ -1,0 +1,80 @@
+.current-weather
+{
+    font: 400 15px Arial, Helvetica, sans-serif;
+    margin: 0 0 35px;
+
+    &_title
+    {
+        font-size: 24px;
+        text-transform: capitalize;
+        padding: 0 24px 10px;
+        color: #ff1500;
+    }
+    &__column__container
+    {
+        padding: 15px 24px;
+
+        &_title
+        {
+            color: #000;
+            font-size: 25px;
+            opacity: 0.5;
+            text-transform: capitalize;
+            float: left;
+            margin: 10px 50px 0 0;
+            width: 90px;
+        }
+
+        &_tempvalue
+        {
+            margin: 0 0 15px;
+
+            &_big
+            {
+                font: 700 65px Arial, Helvetica, sans-serif;
+                float: left;
+                margin: 0 40px 0 0;
+            }
+
+            &_info
+            {
+                opacity: 0.5;
+                float: left;
+
+                &_element
+                {
+                    margin: 5px 0;
+                }
+            }
+        }
+
+        &__icon
+        {
+            display: table;
+
+            &_image
+            {
+                float: left;
+                margin: 0 25px 0 0;
+
+                &_mini
+                {
+                    height: 35px;
+                    margin-top: 5px;
+                }
+            }
+
+            &_text
+            {
+                font-size: 25px;
+                float: left;
+                margin: 10px 0 0 0;
+
+                &_full
+                {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

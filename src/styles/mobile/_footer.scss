@@ -1,0 +1,27 @@
+.footer
+{
+    margin: 30px 24px;
+
+    &-link
+    {
+        color: #0670c1;
+        display: block;
+        text-decoration: none;
+        margin: 12px 0;
+
+        &:hover
+        {
+            text-decoration: underline;
+        }
+
+        &-first
+        {
+            margin: 0 0 5px;
+        }
+
+        &-text
+        {
+            display: inline;
+        }
+    }
+}

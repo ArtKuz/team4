@@ -1,0 +1,114 @@
+<div class="forecast_full__day {{#if date.is_weekstart}} forecast_full__day-weekstart {{/if}}">
+    <div class="forecast_full__weekday {{#if date.is_weekend}} forecast_full__weekday-weekend {{/if}}">
+        {{~#if date.is_now~}}
+            Сегодня, {{datef 'dd MMMM' date.date}}
+            {{~else~}}
+            {{~#if date.is_tomorrow~}}
+                Завтра, {{datef 'DD' date.date}}
+                {{~else~}}
+                {{datef 'dd MMMM' date.date}}, {{datef 'DD' date.date}}
+            {{~/if~}}
+        {{~/if~}}
+    </div>
+
+    {{~#if date.is_now~}}
+        <div class="current-weather_content" style="background: url('http://yandex.st/weather/_/iy-ZbqH20-0JN8CK1eeaYd-YKe4.png') repeat-y right #{{temp2color today.temp}}">
+            <div class="current-weather__column__container">
+                <div class="current-weather__column__container_tempvalue">
+                    <div class="current-weather__column__container_tempvalue_big">{{today.temp}}&deg;C</div>
+                    <div class="current-weather__column__container_tempvalue_info">
+                        <div class="current-weather__column__container_tempvalue_info_element">2 часа назад</div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="current-weather__column__container__icon">
+                    <img class="current-weather__column__container__icon_image" src="{{weatherIcon today.weather_icon}}" alt="">
+                    <div class="current-weather__column__container__icon_text">
+                        <div>{{today.weather}}</div>
+                        <div class="current-weather__column__container_tempvalue_info current-weather__column__container__icon_text_full">
+                            <div class="current-weather__column__container_tempvalue_info_element">Ветер: {{today.wind}}, {{today.wind_speed}} м/с</div>
+                            <div class="current-weather__column__container_tempvalue_info_element">Влажность: {{today.humidity}}%</div>
+                            <div class="current-weather__column__container_tempvalue_info_element">Давление: {{today.pressure}} мм рт. ст.</div>
+                            <div class="current-weather__column__container_tempvalue_info_element">Восход: {{day.sunrise}}&nbsp;&nbsp;Закат: {{day.sunset}}</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {{~/if~}}
+
+    <div class="forecast_full__weather-box" style="background-color: #{{temp2color morning.temp}}">
+        <div class="forecast_full__weather-title">Утром</div>
+        <img class="forecast_full__weather-icon" src="{{weatherIcon morning.weather_icon}}">
+        <div class="forecast_full__weather-info">
+            <div class="forecast_full__weather-temp">
+                {{#if morning.temp_min}}
+                    {{morning.temp_min}}&nbsp;&nbsp;&nbsp;{{morning.temp_max}}
+                {{else}}
+                    {{morning.temp}}
+                {{/if}}
+            </div>
+            <div class="current-weather__column__container_tempvalue_info current-weather__column__container__icon_text_full">
+                <div class="current-weather__column__container_tempvalue_info_element">Ветер: {{morning.wind}}, {{morning.wind_speed}} м/с</div>
+                <div class="current-weather__column__container_tempvalue_info_element">Влажность: {{morning.humidity}}%</div>
+                <div class="current-weather__column__container_tempvalue_info_element">Давление: {{morning.pressure}} мм рт. ст.</div>
+            </div>
+        </div>
+    </div>
+    <div class="forecast_full__weather-box" style="background-color: #{{temp2color day.temp}}">
+        <div class="forecast_full__weather-title">Днём</div>
+        <img class="forecast_full__weather-icon" src="{{weatherIcon day.weather_icon}}">
+        <div class="forecast_full__weather-info">
+            <div class="forecast_full__weather-temp">
+                {{#if day.temp_min}}
+                    {{day.temp_min}}&nbsp;&nbsp;&nbsp;{{day.temp_max}}
+                {{else}}
+                    {{day.temp}}
+                {{/if}}
+            </div>
+            <div class="current-weather__column__container_tempvalue_info current-weather__column__container__icon_text_full">
+                <div class="current-weather__column__container_tempvalue_info_element">Ветер: {{day.wind}}, {{day.wind_speed}} м/с</div>
+                <div class="current-weather__column__container_tempvalue_info_element">Влажность: {{day.humidity}}%</div>
+                <div class="current-weather__column__container_tempvalue_info_element">Давление: {{day.pressure}} мм рт. ст.</div>
+            </div>
+        </div>
+    </div>
+    <div class="forecast_full__weather-box" style="background-color: #{{temp2color evening.temp}}">
+        <div class="forecast_full__weather-title">Вечером</div>
+        <img class="forecast_full__weather-icon" src="{{weatherIcon evening.weather_icon}}">
+        <div class="forecast_full__weather-info">
+            <div class="forecast_full__weather-temp">
+                {{#if evening.temp_min}}
+                    {{evening.temp_min}}&nbsp;&nbsp;&nbsp;{{evening.temp_max}}
+                {{else}}
+                    {{evening.temp}}
+                {{/if}}
+            </div>
+            <div class="current-weather__column__container_tempvalue_info current-weather__column__container__icon_text_full">
+                <div class="current-weather__column__container_tempvalue_info_element">Ветер: {{evening.wind}}, {{evening.wind_speed}} м/с</div>
+                <div class="current-weather__column__container_tempvalue_info_element">Влажность: {{evening.humidity}}%</div>
+                <div class="current-weather__column__container_tempvalue_info_element">Давление: {{evening.pressure}} мм рт. ст.</div>
+            </div>
+        </div>
+    </div>
+    <div class="forecast_full__weather-box" style="background-color: #{{temp2color night.temp}}">
+        <div class="forecast_full__weather-title">Ночью</div>
+        <img class="forecast_full__weather-icon" src="{{weatherIcon night.weather_icon}}">
+        <div class="forecast_full__weather-info">
+            <div class="forecast_full__weather-temp">
+                {{#if night.temp_min}}
+                    {{night.temp_min}}&nbsp;&nbsp;&nbsp;{{night.temp_max}}
+                {{else}}
+                    {{night.temp}}
+                {{/if}}
+            </div>
+            <div class="current-weather__column__container_tempvalue_info current-weather__column__container__icon_text_full">
+                <div class="current-weather__column__container_tempvalue_info_element">Ветер: {{night.wind}}, {{night.wind_speed}} м/с</div>
+                <div class="current-weather__column__container_tempvalue_info_element">Влажность: {{night.humidity}}%</div>
+                <div class="current-weather__column__container_tempvalue_info_element">Давление: {{night.pressure}} мм рт. ст.</div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -5,7 +5,8 @@ var StateModel = Backbone.Model.extend({
         tab: 'short',
         geoid: null,
         locality: null,
-        recent: []
+        recent: [],
+        mobile: false
     },
 
     initialize: function () {
@@ -21,7 +22,7 @@ var StateModel = Backbone.Model.extend({
                 if (recent[i].geoid === locality.geoid) {
                     return;
                 }
-            };
+            }
 
             recent.unshift(locality);
 

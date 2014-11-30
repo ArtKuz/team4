@@ -26,13 +26,27 @@ gulp.task('sass', function() {
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .on('error', console.log);
+        .on('error', console.log),
+        streamMobile = gulp.src('src/styles/mobile/base.scss')
+            .pipe(sass())
+            .on('error', console.log)
+            .pipe(rename('mobile.css'))
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false
+            }))
+            .on('error', console.log);
 
     if (isProduction) {
         stream.pipe(minifycss());
+        streamMobile.pipe(minifycss());
     }
 
     stream
+        .pipe(gulp.dest('assets/css'))
+        .pipe(connect.reload());
+
+    streamMobile
         .pipe(gulp.dest('assets/css'))
         .pipe(connect.reload());
 });

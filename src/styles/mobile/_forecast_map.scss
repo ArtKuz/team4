@@ -1,0 +1,81 @@
+#forecast_map__container
+{
+    width: 100%;
+    min-height: 510px;
+}
+
+.forecast_map__baloon {
+    &_img
+    {
+        margin: 2px 0 0 8px;
+    }
+
+    &_temp
+    {
+        font-size: 14px;
+        left: 36px;
+        position: absolute;
+        top: 7px;
+    }
+
+    &__popover
+    {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        max-width: 276px;
+        padding: 1px;
+        position: absolute;
+        margin-top: -10px;
+
+        &_close
+        {
+            color: #000;
+            font: 700 28px/20px Arial,Helvetica,sans-serif;
+            opacity: 0.2;
+            position: absolute;
+            right: 10px;
+            top: 7px;
+            text-decoration: none;
+
+            &:hover,
+            &close:focus
+            {
+                opacity: 0.4;
+            }
+        }
+
+        &_arrow
+        {
+            border: 11px solid transparent;
+            border-bottom-width: 0;
+            bottom: -11px;
+            left: 50%;
+            margin: 0 0 0 -21px;
+            position: absolute;
+        }
+
+        &_arrow:after
+        {
+            border: 10px solid transparent;
+            position: absolute;
+            content: "";
+            border-bottom-width: 0;
+            border-top-color: #fff;
+            bottom: 1px;
+        }
+
+        &_title {
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #ebebeb;
+            border-radius: 5px 5px 0 0;
+            margin: 0;
+            padding: 8px 14px;
+        }
+
+        &_content {
+            padding: 10px;
+        }
+    }
+}

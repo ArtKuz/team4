@@ -44,7 +44,6 @@ NowView = Backbone.View.extend({
             yesterday_temp: yesterday_temp
         }));
     }
-
 });
 
 module.exports = NowView;

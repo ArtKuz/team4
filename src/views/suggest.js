@@ -13,11 +13,16 @@ var Suggest = Backbone.View.extend({
 
     events: {
         'keyup input':  'update',
-        'click button': 'selectCity'
+        'click button': 'selectCity',
+        'click .header__search-close': 'clear_search'
     },
 
     update: function(e) {
         self = this;
+
+        if (this.state.get('mobile')) {
+            $('.header__search-close').show();
+        }
 
         $('input').autocomplete({
             source: function( request, response ) {
@@ -45,7 +50,7 @@ var Suggest = Backbone.View.extend({
         var state = this.state;
 
         getCities(query).then(function(data) {
-            if (data.length === 1) {
+            if (data.length > 0) {
                 var geoId = data.map(function(el) {
                     return el.geoid;
                 });
@@ -53,6 +58,12 @@ var Suggest = Backbone.View.extend({
                 state.set('geoid', geoId[0]);
             }
         });
+    },
+
+    clear_search: function(e) {
+        e.preventDefault();
+        $('.header__search-close').hide();
+        $('input').val('');
     },
 
     render: function() {

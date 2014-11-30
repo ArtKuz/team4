@@ -1,0 +1,45 @@
+$border-button: 1px solid rgba(0, 0, 0, .25);
+
+.layout
+{
+    min-width: 360px;
+}
+
+.button
+{
+    font-size: 13px;
+    display: inline-block;
+    padding: 7px 14px;
+    text-decoration: none;
+    color: #000;
+    border: $border-button;
+    border-radius: 5px;
+    background-color: #fff;
+
+    &:not(.button-active):hover
+    {
+        background: linear-gradient(#fff 0%, #eee 100%);
+    }
+
+    &:hover
+    {
+        cursor: pointer;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+    }
+
+    &-active
+    {
+        background-color: #ffeaae;
+    }
+}
+
+.forecast {
+    display: block;
+    overflow: hidden;
+    margin: 25px 0;
+}
+
+.clear
+{
+    clear: both;
+}

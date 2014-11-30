@@ -1,0 +1,107 @@
+.header
+{
+    padding: 28px 24px;
+    height: 35px;
+    border-bottom: 1px solid #d9d9d9;
+
+    &__logo
+    {
+        float: left;
+    }
+
+    &__label
+    {
+        position: relative;
+        display: inline-block;
+        float: left;
+        margin-left: 22px;
+        padding: 2px;
+        background: #ffca00;
+
+        &-link
+        {
+            font-size: 16px;
+            line-height: 31px;
+            display: inline-block;
+            padding: 0 15px;
+            text-decoration: none;
+            color: #000;
+            background: #fff;
+        }
+
+        &:before
+        {
+            position: absolute;
+            top: 0;
+            right: -6px;
+            width: 0;
+            height: 0;
+            content: '';
+            color: #ffca00;
+            border-width: 17px 0 17px 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent #ffca00;
+        }
+
+        &:after
+        {
+            position: absolute;
+            top: 2px;
+            right: -4px;
+            width: 0;
+            height: 0;
+            content: '';
+            color: #fff;
+            border-width: 15px 0 15px 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent #fff;
+        }
+    }
+
+    &__search
+    {
+        padding: 8px 24px;
+        position: relative;
+
+        &-input
+        {
+            font-size: 28px;
+            width: 99%;
+            height: 50px;
+            text-indent: 14px;
+            border: 1px solid #d2d2d2;
+            color: #999;
+
+            &:focus
+            {
+                outline: 0;
+            }
+        }
+
+        &-close
+        {
+            background: url("/assets/images/search_close.svg") no-repeat scroll center center / 24px 24px #fff;
+            cursor: pointer;
+            display: none;
+            height: 24px;
+            position: absolute;
+            right: 180px;
+            top: 24px;
+            width: 24px;
+        }
+    }
+
+}
+
+.button-search
+{
+    font-size: 28px;
+    width: 150px;
+    height: 54px;
+    overflow: hidden;
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

@@ -10,13 +10,15 @@ var ForecastTabsView = require('./views/forecast_tabs');
 var ForecastShortView = require('./views/forecast_short');
 var ForecastFullView = require('./views/forecast_full');
 var ForecastHoursView = require('./views/forecast_hours');
+var ForecastMapView = require('./views/forecast_map');
 var NowView = require('./views/now');
 var TitleView = require('./views/title');
 
 require('./utils/template_helper');
 
 var initialize = function () {
-    var $overlay = $('.overlay').show();
+    var $overlay = $('.overlay');
+    $overlay.show();
 
     Backbone.$ = $;
     var state = new StateModel(),
@@ -30,22 +32,30 @@ var initialize = function () {
                 el: $('.current-weather'),
                 collection: models.forecast,
                 yesterday: models.yesterday,
-                state: state,
+                state: state
             }),
             forecastFull: new ForecastFullView({
                 el: $('.forecast_full'),
+                today: models.today,
                 collection: models.forecast,
-                state: state,
+                state: state
             }),
             forecastShort: new ForecastShortView({
                 el: $('.forecast_short'),
+                today: models.today,
                 collection: models.forecast,
-                state: state,
+                state: state
             }),
             forecastHours: new ForecastHoursView({
                 el: $('.forecast_hours'),
+                today: models.today,
                 collection: models.forecast,
-                state: state,
+                state: state
+            }),
+            forecastMap: new ForecastMapView({
+                el: $('.forecast_map'),
+                collection: models.forecast,
+                state: state
             })
         };
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погода</title>
+    <link rel="stylesheet" href="/assets/css/mobile.css">
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    <div class="overlay">
+        <div class="overlay__preloader overlay__preloader_centered">
+             <img src="/assets/images/ajax-loader.gif">
+        </div>
+    </div>
+    <div class="layout">
+        <div class="header">
+            <a href="#">
+                <img src="/assets/images/header__logo.png" alt="" class="header__logo">
+            </a>
+            <div class="header__label">
+                <a href="#" class="header__label-link">Погода</a>
+            </div>
+        </div>
+        <div class="header__search">
+            <input class="header__search-input" type="text">
+            <a href="" class="header__search-close"></a>
+            <button class="button button-search">Найти</button>
+        </div>
+
+        <div class="middle__wrapper">
+            <div class="tabs"></div>
+            <div class="forecast">
+                <div class="forecast_short"></div>
+                <div class="forecast_full"></div>
+                <div class="forecast_hours"></div>
+                <div class="forecast_map"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div>&copy; 2000&mdash;2014 &laquo;<a href="#" class="footer-link footer-link-text">Яндекс</a>&raquo;</div>
+            <a href="#" class="footer-link">Обратная связь</a>
+            <a href="/" class="footer-link">Полная версия</a>
+        </div>
+    </div>
+    <script src="//yandex.st/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//yastatic.net/jquery-ui/1.11.2/jquery-ui.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+</body>
+</html>
